@@ -1,4 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
+﻿<project xmlns="http://maven.apache.org/POM/4.0.0" 
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="
   http://maven.apache.org/POM/4.0.0 
@@ -7,7 +7,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.yklis</groupId>
-	<artifactId>YkLisFunction</artifactId>
+	<artifactId>LisFunction</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
@@ -261,7 +261,7 @@
 	<build> 
 	    <!-- 如果不定义finalName，则生成的包名是artifactId-version.jar -->
 	    <!-- 定义finalName，则生成的包名是finalName.jar -->
-	    <finalName>YkLisFunction</finalName>
+	    <finalName>LisFunction</finalName>
 	    
 	    <plugins>
 	        <!-- 解决maven编译时“错误:编码GBK的不可映射字符”的问题 -->
