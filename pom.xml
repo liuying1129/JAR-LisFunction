@@ -263,6 +263,20 @@
 	    <!-- 定义finalName，则生成的包名是finalName.jar -->
 	    <finalName>LisFunction</finalName>
 	    
+        <!-- 如果不加该resources，则打包时只会默认将src/main/resources的文件做为资源文件打包，漏掉dao目录下的xml资源文件 -->
+        <resources>  
+           <resource>  
+              <directory>src/main/resources</directory>  
+           </resource>
+           <resource>  
+              <directory>src/main/java</directory>  
+              <includes>  
+                  <!-- **/*,表示src/main/java下各级子目录的xml文件 -->
+                  <include>**/*.xml</include>  
+              </includes>  
+           </resource>    
+        </resources>  	    	    
+	    
 	    <plugins>
 	        <!-- 解决maven编译时“错误:编码GBK的不可映射字符”的问题 -->
 	        <plugin>
