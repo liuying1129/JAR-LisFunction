@@ -40,7 +40,7 @@ public class SelectDataSetSQLCmdServiceImpl implements SelectDataSetSQLCmdServic
             map.put("response", mapResponse);
             
 	    	Gson gson = new Gson();
-    	      
+	    	    	      
     		return gson.toJson(map);
     	}
 
@@ -52,6 +52,9 @@ public class SelectDataSetSQLCmdServiceImpl implements SelectDataSetSQLCmdServic
             map.put("response", list);
             
 	    	Gson gson = new Gson();
+	    	
+	        logger.info("lisfunction log succ");
+
 	    	return gson.toJson(map);
     	    	
     	}catch(Exception e){
@@ -65,6 +68,9 @@ public class SelectDataSetSQLCmdServiceImpl implements SelectDataSetSQLCmdServic
             map.put("response", mapResponse);
             
 	    	Gson gson = new Gson();
+	    	
+            logger.info("lisfunction log error");
+            
 	    	return gson.toJson(map);
 	
 		//for (Iterator<Map<String, Object>> ite = list.iterator(); ite.hasNext();) {
