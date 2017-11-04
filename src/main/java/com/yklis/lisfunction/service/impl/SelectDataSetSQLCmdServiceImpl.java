@@ -62,19 +62,4 @@ public class SelectDataSetSQLCmdServiceImpl implements SelectDataSetSQLCmdServic
 	    	return gson.toJson(map);		
     	}
 	}
-		
-	@Override
-	public List<Map<String, Object>> selectDataSetSQLCmd2(String sql){		
-
-    	try{
-    		List<Map<String, Object>> list = jdbcTemplate.queryForList(sql);
-    		                	    	
-	    	return list;
-    	    	
-    	}catch(Exception e){    		                
-	    	            
-	    	return null;
-		
-    	}
-	}
 }
