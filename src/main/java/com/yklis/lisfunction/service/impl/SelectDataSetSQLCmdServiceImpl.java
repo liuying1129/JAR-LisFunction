@@ -14,7 +14,7 @@ import com.yklis.lisfunction.service.SelectDataSetSQLCmdService;
 @Service
 public class SelectDataSetSQLCmdServiceImpl implements SelectDataSetSQLCmdService {
 
-	// 注入Bean
+	//注入Bean
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
@@ -59,12 +59,7 @@ public class SelectDataSetSQLCmdServiceImpl implements SelectDataSetSQLCmdServic
             
 	    	Gson gson = new Gson();
 	    	            
-	    	return gson.toJson(map);
-	
-		//for (Iterator<Map<String, Object>> ite = list.iterator(); ite.hasNext();) {
-			
-		//}
-		
+	    	return gson.toJson(map);		
     	}
 	}
 		
@@ -82,5 +77,4 @@ public class SelectDataSetSQLCmdServiceImpl implements SelectDataSetSQLCmdServic
 		
     	}
 	}
-
 }

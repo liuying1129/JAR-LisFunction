@@ -8,5 +8,4 @@ public interface SelectDataSetSQLCmdService {
 	String selectDataSetSQLCmd(String sql);
 	
 	List<Map<String, Object>> selectDataSetSQLCmd2(String sql);
-
 }
