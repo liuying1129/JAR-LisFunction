@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
-import com.google.gson.Gson;
+import com.alibaba.fastjson.JSON;
 import com.yklis.lisfunction.service.ScalarSQLCmdService;
 
 @Service
@@ -29,8 +29,7 @@ public class ScalarSQLCmdServiceImpl implements ScalarSQLCmdService {
 	        map.put("success", false);
 	        map.put("response", mapResponse);
 	        
-	    	Gson gson = new Gson();
-	    	return gson.toJson(map);
+	    	return JSON.toJSONString(map);
     	}
     	
     	try{
@@ -47,8 +46,7 @@ public class ScalarSQLCmdServiceImpl implements ScalarSQLCmdService {
 	        map.put("success", true);
 	        map.put("response", mapResponse);
 	        
-	    	Gson gson = new Gson();
-	    	return gson.toJson(map);
+	    	return JSON.toJSONString(map);
 
     	}catch(Exception e){
 
@@ -61,9 +59,7 @@ public class ScalarSQLCmdServiceImpl implements ScalarSQLCmdService {
             map.put("success", false);
             map.put("response", mapResponse);
             
-	    	Gson gson = new Gson();
-	    	return gson.toJson(map);
-
+	    	return JSON.toJSONString(map);
     	}
 
 	}

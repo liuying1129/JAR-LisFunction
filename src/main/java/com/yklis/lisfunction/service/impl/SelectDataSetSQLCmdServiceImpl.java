@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
-import com.google.gson.Gson;
+import com.alibaba.fastjson.JSON;
 import com.yklis.lisfunction.service.SelectDataSetSQLCmdService;
 
 @Service
@@ -31,9 +31,7 @@ public class SelectDataSetSQLCmdServiceImpl implements SelectDataSetSQLCmdServic
             map.put("success", false);
             map.put("response", mapResponse);
             
-	    	Gson gson = new Gson();
-	    	    	      
-    		return gson.toJson(map);
+    		return JSON.toJSONString(map);
     	}
 
     	try{
@@ -43,9 +41,7 @@ public class SelectDataSetSQLCmdServiceImpl implements SelectDataSetSQLCmdServic
             map.put("success", true);
             map.put("response", list);
             
-	    	Gson gson = new Gson();
-	    	
-	    	return gson.toJson(map);
+	    	return JSON.toJSONStringWithDateFormat(map, "yyyy-MM-dd HH:mm:ss");
     	    	
     	}catch(Exception e){
     		                
@@ -57,9 +53,7 @@ public class SelectDataSetSQLCmdServiceImpl implements SelectDataSetSQLCmdServic
             map.put("success", false);
             map.put("response", mapResponse);
             
-	    	Gson gson = new Gson();
-	    	            
-	    	return gson.toJson(map);		
+	    	return JSON.toJSONString(map);
     	}
 	}
 }
