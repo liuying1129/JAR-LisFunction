@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.yklis.lisfunction.dao.ChkValuDao">  
+ 
+    <resultMap type="com.yklis.lisfunction.entity.ChkValuEntity" id="chkValuMap">
+        <!-- property必须与实体中的属性一样，column必须与select中字段名一样 -->
+        <id property="valueid" column="valueid"/>
+        <result property="photo" column="Photo"/>
+    </resultMap>
+    
+    <select id="selectChkValuImage" resultMap="chkValuMap" parameterType="com.yklis.lisfunction.entity.ChkValuEntity">
+        select Photo from chk_valu_bak
+        <where>
+            <if test="valueid != null and valueid !=0 ">
+                valueid=#{valueid}
+            </if>
+        </where> 
+    </select>
+</mapper>

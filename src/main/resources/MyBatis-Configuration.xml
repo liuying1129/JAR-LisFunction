@@ -3,5 +3,6 @@
 <configuration>
 	<mappers>
 		<mapper resource="com/yklis/lisfunction/dao/WorkerDao.xml" />
+		<mapper resource="com/yklis/lisfunction/dao/ChkValuDao.xml" />
 	</mappers>
 </configuration>
