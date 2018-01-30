@@ -8,8 +8,12 @@
         <result property="photo" column="Photo"/>
     </resultMap>
     
+    <!-- #{}解析为JDBC预编译语句(prepared statement)的参数标记符,#{}被解析为一个参数占位符? -->
+    <!-- ${}仅仅为一个纯碎的 string替换,在动态 SQL解析阶段将会进行变量替换 -->
+    <!-- 表名不支持预编译,帮只能用${} -->
     <select id="selectChkValuImage" resultMap="chkValuMap" parameterType="com.yklis.lisfunction.entity.ChkValuEntity">
-        select Photo from chk_valu_bak
+        select Photo 
+        from ${tableName}
         <where>
             <if test="valueid != null and valueid !=0 ">
                 valueid=#{valueid}

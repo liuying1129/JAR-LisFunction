@@ -2,8 +2,17 @@ package com.yklis.lisfunction.entity;
 
 public class ChkValuEntity {
 
+    private String tableName;//chk_valu、chk_valu_bak
     private int valueid;
     private byte[] photo;
+    
+    public String getTableName() {
+        return this.tableName;
+    }
+
+    public void setTableName(String tableName) {
+        this.tableName = tableName;
+    }
     
     public int getValueid() {
         return this.valueid;
