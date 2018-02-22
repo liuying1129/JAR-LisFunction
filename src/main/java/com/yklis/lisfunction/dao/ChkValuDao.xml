@@ -5,6 +5,9 @@
     <resultMap type="com.yklis.lisfunction.entity.ChkValuEntity" id="chkValuMap">
         <!-- property必须与实体中的属性一样，column必须与select中字段名一样 -->
         <id property="valueid" column="valueid"/>
+        <result property="pkunid" column="pkunid"/>               
+        <result property="name" column="Name"/>
+        <result property="english_name" column="english_name"/>
         <result property="photo" column="Photo"/>
     </resultMap>
     
@@ -12,12 +15,26 @@
     <!-- ${}仅仅为一个纯碎的 string替换,在动态 SQL解析阶段将会进行变量替换 -->
     <!-- 表名不支持预编译,帮只能用${} -->
     <select id="selectChkValuImage" resultMap="chkValuMap" parameterType="com.yklis.lisfunction.entity.ChkValuEntity">
-        select Photo 
+        select 
+        pkunid
+        ,Name
+        ,english_name
+        ,issure
+        ,Photo
         from ${tableName}
         <where>
             <if test="valueid != null and valueid !=0 ">
-                valueid=#{valueid}
+                and valueid=#{valueid}
             </if>
-        </where> 
+            <if test="pkunid != null and pkunid !=0 ">
+                and pkunid=#{pkunid}
+            </if>
+            <if test="issure != null and issure !='' ">
+                and issure=#{issure}
+            </if>
+            <if test="photo != null">
+                and Photo is not null
+            </if>
+        </where>
     </select>
 </mapper>
