@@ -3,7 +3,8 @@ package com.yklis.lisfunction.service.impl;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.Resource;
+
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
@@ -13,8 +14,15 @@ import com.yklis.lisfunction.service.ExecSQLCmdService;
 @Service
 public class ExecSQLCmdServiceImpl implements ExecSQLCmdService {
 
-    @Autowired
-    JdbcTemplate jdbcTemplate;
+	//@Resource与@Autowired作用非常相似
+    //@Autowired默认按照byType方式进行bean匹配，@Resource默认按照byName方式进行bean匹配
+    //@Autowired是Spring的注解，@Resource是J2EE的注解。建议使用@Resource注解，以减少代码和Spring之间的耦合
+	
+    //@Autowired
+    //private JdbcTemplate jdbcTemplate;
+    
+    @Resource(type=JdbcTemplate.class)
+    private JdbcTemplate jdbcTemplate;
 
     /**
      * UPDATE或INSERT SQL

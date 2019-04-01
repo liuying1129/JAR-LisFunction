@@ -14,7 +14,7 @@ import com.yklis.lisfunction.service.ScalarSQLCmdService;
 public class ScalarSQLCmdServiceImpl implements ScalarSQLCmdService {
     
     @Autowired
-    JdbcTemplate jdbcTemplate;
+    private JdbcTemplate jdbcTemplate;
 
 	@Override
 	public String ScalarSQLCmd(String sql) {
