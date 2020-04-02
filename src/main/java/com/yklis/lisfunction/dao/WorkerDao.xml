@@ -18,7 +18,7 @@
 
     <!-- mybatis参数注解方式(@Param),不需要parameterType -->	  
     <select id="ifCanLogin" resultMap="workerMap">	
-		select * from worker where id=#{userId} and passwd=#{passWord}
+		select * from worker where id=#{userId} and isnull(passwd,'')=#{passWord}
     </select>
         
 </mapper>
